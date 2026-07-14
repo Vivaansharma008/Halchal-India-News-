@@ -4,16 +4,26 @@ import { Clock, Eye, User } from "lucide-react";
 import type { NewsListItem } from "@/lib/news.functions";
 import { CATEGORY_LABELS, type CategorySlug } from "@/lib/categories";
 
+
+
 function timeAgo(iso: string) {
-  const s = Math.max(1, Math.floor((Date.now() - new Date(iso).getTime()) / 1000));
+  if (typeof window === "undefined") return "";
+
+  const s = Math.max(
+    1,
+    Math.floor((Date.now() - new Date(iso).getTime()) / 1000)
+  );
+
   if (s < 60) return `${s} सेकंड पहले`;
+
   const m = Math.floor(s / 60);
   if (m < 60) return `${m} मिनट पहले`;
+
   const h = Math.floor(m / 60);
   if (h < 24) return `${h} घंटे पहले`;
+
   return `${Math.floor(h / 24)} दिन पहले`;
 }
-
 function readingTime(item: NewsListItem) {
   const base = (item.summary?.length ?? 0) + (item.title?.length ?? 0);
   return Math.max(2, Math.round(base / 180));
