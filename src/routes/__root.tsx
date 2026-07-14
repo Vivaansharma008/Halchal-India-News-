@@ -14,7 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { AdSlot } from "@/components/site/AdSlot";
-import { AiAssistant } from "@/components/site/AiAssistant";
+
 import { Toaster } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -192,8 +192,7 @@ function RootComponent() {
         </div>
         <Footer />
       </div>
-      <AiAssistant />
-      <Toaster richColors position="top-center" />
+<Toaster richColors position="top-center" />
     </QueryClientProvider>
   );
 }
