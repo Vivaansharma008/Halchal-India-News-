@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /auth
+Disallow: /search
+
+Sitemap: https://halchalindianews.com/sitemap.xml
+Sitemap: https://halchalindianews.com/news-sitemap.xml
